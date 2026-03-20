@@ -6,6 +6,21 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
 
 ---
 
+## Tools and Technologies
+
+- Python 3.8+
+- PostgreSQL
+
+### Python Libraries:
+- pandas
+- numpy
+- sqlalchemy
+- psycopg2
+
+- Kaggle API Key (for data download)
+
+---
+
 ## Project Workflow
 
 ### 1. Environment Setup
@@ -40,25 +55,57 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
 ### 8. Data Analysis (SQL)
 - Wrote SQL queries to analyze business problems
 - Used aggregation, grouping, CTEs, and window functions
+  
+---
 
-### 9. Business Insights
-- Derived meaningful insights and recommendations from analysis
+## Dataset Description
+
+   -invoice_id – Unique transaction ID
+   -branch – Store branch
+   -city – Store location
+   -category – Product category
+   -unit_price – Price per item
+   -quantity – Number of items sold
+   -date – Transaction date
+   -time – Transaction time
+   -payment_method – Payment type
+   -rating – Customer rating
+   -profit_margin – Profit percentage
 
 ---
 
-## Requirements
+## Key Business Questions (Walmart Business Problems.pdf)
+   1. Payment Methods and Sales Analysis
+   2. Highest-Rated Category by Branch
+   3. Busiest Day by Branch
+   4. Sales Volume by Payment Method
+   5. Category Ratings by City
+   6. Profit Analysis by Category
+   7. Most Common Payment Method per Branch
+   8. Sales Distribution by Time of Day
+   9. Revenue Decline Analysis (Year-over-Year)
+   
+---
 
-- Python 3.8+
-- PostgreSQL
+## Results and Insights
 
-### Python Libraries:
-- pandas
-- numpy
-- sqlalchemy
-- psycopg2
+- E-wallet is the most preferred payment method, indicating a shift toward digital payments 
+- Evening hours show higher transaction volumes across branches 
+- Certain product categories consistently receive higher customer ratings 
+- Sales patterns vary significantly across branches
 
-- Kaggle API Key (for data download)
+---
+  
+## Project Structure
 
+```plaintext
+|-- data/                     # Raw data and transformed data
+|-- sql_queries/              # SQL scripts for analysis and queries
+|-- notebooks/                # Jupyter notebooks for Python analysis
+|-- README.md                 # Project documentation
+|-- requirements.txt          # List of required Python libraries
+|-- main.py                   # Main script for loading, cleaning, and processing data
+```
 ---
 
 ## Getting Started
@@ -74,25 +121,6 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
 3. Set up your Kaggle API, download the data, and follow the steps to load and analyze.
 
 ---
-
-## Project Structure
-
-```plaintext
-|-- data/                     # Raw data and transformed data
-|-- sql_queries/              # SQL scripts for analysis and queries
-|-- notebooks/                # Jupyter notebooks for Python analysis
-|-- README.md                 # Project documentation
-|-- requirements.txt          # List of required Python libraries
-|-- main.py                   # Main script for loading, cleaning, and processing data
-```
----
-
-## Results and Insights
-
-- E-wallet is the most preferred payment method, indicating a shift toward digital payments 
-- Evening hours show higher transaction volumes across branches 
-- Certain product categories consistently receive higher customer ratings 
-- Sales patterns vary significantly across branches
 
 ## License
 This project is licensed under the MIT License. 
