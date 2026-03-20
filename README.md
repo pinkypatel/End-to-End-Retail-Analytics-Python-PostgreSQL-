@@ -84,7 +84,42 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
    7. Most Common Payment Method per Branch
    8. Sales Distribution by Time of Day
    9. Revenue Decline Analysis (Year-over-Year)
-   
+   ```bash
+    WITH revenue_2023 AS
+	(
+	    SELECT 
+	        branch,
+	        SUM(total) as revenue_2023
+	    FROM walmart
+	    WHERE EXTRACT(YEAR FROM TO_DATE(date, 'DD/MM/YY')) = 2023
+	    GROUP BY branch
+	),
+	
+	revenue_2022 AS
+	(
+	    SELECT 
+	        branch,
+	        SUM(total) as revenue_2022
+	    FROM walmart
+	    WHERE EXTRACT(YEAR FROM TO_DATE(date, 'DD/MM/YY')) = 2022
+	    GROUP BY branch
+	)
+
+	SELECT
+		previous_year.branch,
+		previous_year.revenue_2022,
+		current_year.revenue_2023,
+		-- Formula: rdr == previous_year.revenue_2022-current_year.revenue_2023/previous_year.revenue_2022*100
+		ROUND((previous_year.revenue_2022-current_year.revenue_2023)::numeric/previous_year.revenue_2022::numeric * 100, 2) 
+		AS rev_dec_ratio
+	FROM revenue_2022 AS previous_year
+	JOIN revenue_2023 AS current_year
+	ON previous_year.branch = current_year.branch
+	WHERE previous_year.revenue_2022 > current_year.revenue_2023
+	ORDER BY 4 DESC
+	LIMIT 5
+;
+   ```
 ---
 
 ## Results and Insights
@@ -96,18 +131,6 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
 
 ---
   
-## Project Structure
-
-```plaintext
-|-- data/                     # Raw data and transformed data
-|-- sql_queries/              # SQL scripts for analysis and queries
-|-- notebooks/                # Jupyter notebooks for Python analysis
-|-- README.md                 # Project documentation
-|-- requirements.txt          # List of required Python libraries
-|-- main.py                   # Main script for loading, cleaning, and processing data
-```
----
-
 ## Getting Started
 
 1. Clone the repository:
