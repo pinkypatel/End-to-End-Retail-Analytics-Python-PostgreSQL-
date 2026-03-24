@@ -4,8 +4,6 @@
 
 This project performs an end-to-end analysis of Walmart sales data using Python and PostgreSQL to uncover insights into customer behavior, sales performance, and business trends across multiple branches. The data is extracted using the Kaggle API, processed and cleaned using Pandas and NumPy, and stored in PostgreSQL for advanced SQL-based analysis. The objective is to simulate real-world business analysis and generate actionable insights to support data-driven decision-making..
 
----
-
 ## Tools and Technologies
 
 - Python 3.8+
@@ -18,8 +16,6 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
 - psycopg2
 
 - Kaggle API Key (for data download)
-
----
 
 ## Project Workflow
 
@@ -55,8 +51,6 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
 ### 8. Data Analysis (SQL)
 - Wrote SQL queries to analyze business problems
 - Used aggregation, grouping, CTEs, and window functions
-  
----
 
 ## Dataset Description
 
@@ -71,8 +65,6 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
    -payment_method – Payment type
    -rating – Customer rating
    -profit_margin – Profit percentage
-
----
 
 ## Key Business Questions (Walmart Business Problems.pdf)
    1. Payment Methods and Sales Analysis
@@ -120,7 +112,6 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
 	LIMIT 5
 ;
    ```
----
 
 ## Results and Insights
 
@@ -128,8 +119,6 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
 - Evening hours show higher transaction volumes across branches 
 - Certain product categories consistently receive higher customer ratings 
 - Sales patterns vary significantly across branches
-
----
   
 ## Getting Started
 
@@ -142,8 +131,6 @@ This project performs an end-to-end analysis of Walmart sales data using Python 
    pip install -r requirements.txt
    ```
 3. Set up your Kaggle API, download the data, and follow the steps to load and analyze.
-
----
 
 ## License
 This project is licensed under the MIT License. 
